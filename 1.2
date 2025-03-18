@@ -1,0 +1,16 @@
+1.2 Write a function named triangle_area_kahan that calculates the area of a triangle using the Kahan summation algorithm.
+
+    import numpy as np
+
+    def triangle_area_kahan(a, b, c):
+
+
+        # Sort sides in decreasing order
+        sides = np.sort([a, b, c])[::-1]
+        a, b, c = sides[0], sides[1], sides[2]
+    
+        area = (1/4) * np.sqrt((a + (b + c)) * 
+                              (c - (a - b)) * 
+                              (a + (b - c)) * 
+                              (a + (c - b)))
+        return area
